@@ -43,6 +43,10 @@ image.addEventListener('click', () => {
     tuto.style.marginTop = '1.7vh';
     tuto.style.transform = 'translateX(-5px)';
     okBtn.style.display = 'block';
+    setTimeout(() => {
+      okBtn.style.display = 'none';
+      bubble.style.display = 'none';
+    }, 6000);
   }
 });
 okBtn.addEventListener('click', () => {
@@ -52,5 +56,6 @@ okBtn.addEventListener('click', () => {
     document.querySelector('.esp32-image').style.pointerEvents = 'none';
     document.querySelector('.esp32-image').style.animation = 'none';
   }, 75);
+  
 
 });
