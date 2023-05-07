@@ -68,6 +68,30 @@ main{
         align-items: center;
         user-select: none;
     }
+    .speech-bubble {
+        z-index: -1;
+        position: absolute;
+        top: -50%;
+        right: 20em;
+        transform: translateX(40%);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        width: 150px;
+        height: 10vh;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #okBtn{
+        transform: translateX(200%) translateY(-2.5vh);
+    }
 }  
 .navbar{
     display: flex;
