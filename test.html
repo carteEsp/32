@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <div class="esp32-container">
+        <img src="https://www.tinytronics.nl/shop/image/cache/data/product-1443/esp32%20cp2102%20dev%20board%20v1%201-600x600.jpg" alt="ESP32 Model" class="esp32-image">
+        <div class="speech-bubble">
+            <p class="espbubble" id="dialog-1">Bonjour! <br> <span class="ss">(clicker moi ;) )</span></p>
+            <p id="dialog-2" style="display:none"> Je m'apelle l'ESP32 🙂</p>
+            <p id="dialog-3" style="display:none"> Je suis un microcontroleur! 📡</p>
+        </div>
+    </div>
+      </main>
+      
+      <style>
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .ss{
+            font-size: smaller;
+        }
+        .espbubble{
+            text-align: center;
+        }
+        .esp32-container {
+          position: relative;
+          display: inline-block;
+          margin: auto;
+        }
+      
+        .esp32-image {
+          width: 200px;
+          height: auto;
+        }
+      
+        .speech-bubble {
+          position: absolute;
+          top: -50%;
+          right: 150%;
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s, opacity 0.5s;
+          background-color: #fff;
+          color: #000;
+          text-align: center;
+          padding: 10px;
+          border-radius: 8px;
+          width: 150px;
+          height: 10vh;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+      
+        .speech-bubble:before {
+          content: "";
+          position: absolute;
+          top: -20px;
+          right: 50%;
+          margin-right: -10px;
+          width: 0;
+          height: 0;
+          border-top: 20px solid #fff;
+          border-right: 20px solid transparent;
+          border-left: 20px solid transparent;
+          transform: rotate(45deg);
+        }
+      
+        .esp32-container:hover .speech-bubble {
+          visibility: visible;
+          opacity: 1;
+        }
+      </style>
+      
+      <script>
+        const container = document.querySelector('.esp32-container');
+        const image = document.querySelector('.esp32-image');
+        const bubble = document.querySelector('.speech-bubble');
+        const dialog1 = document.getElementById('dialog-1');
+        const dialog2 = document.getElementById('dialog-2');
+        const dialog3 = document.getElementById('dialog-3');
+      
+        const imageWidth = image.offsetWidth;
+        const imageHeight = image.offsetHeight;
+      
+        bubble.style.top = `-${imageHeight / 2}px`;
+        bubble.style.right = `${imageWidth}px`;
+      
+        let dialogCounter = 1;
+        image.addEventListener('click', () => {
+          if (dialogCounter === 1) {
+            dialog1.style.display = 'none';
+            dialog2.style.display = 'block';
+            dialog3.style.display = 'none';
+            dialogCounter = 2;
+          } else {
+            dialog2.style.display = 'none';
+            dialog1.style.display = 'none';
+            dialog3.style.display = 'block';
+            dialogCounter = 3;
+          }
+        });
+      </script>
+      
+</body>
+</html>
