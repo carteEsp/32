@@ -50,6 +50,7 @@ okBtn.addEventListener('click', () => {
     okBtn.style.display = 'none';
     bubble.style.display = 'none';
     document.querySelector('.esp32-image').style.pointerEvents = 'none';
+    document.querySelector('.esp32-image').style.animation = 'none';
   }, 75);
 
 });

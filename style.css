@@ -81,6 +81,7 @@ a{
 .clickables {
     position: fixed;
     top: 2vh;
+    padding: 15px;
 }
 .clickables::before {
     content: "";
@@ -105,6 +106,7 @@ a{
     width: 6rem;
     height: 8vh;
     display: flex;
+    margin-top: 15px;
     align-items: center;
 }
 .title::before{
@@ -190,6 +192,7 @@ a{
     animation: none;
     background-clip: border-box;
     border-radius: 2px;
+    border-spacing: 50px;
 }
 @keyframes encounter{
     from{
