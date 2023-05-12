@@ -8,6 +8,10 @@ const dialog4 = document.getElementById('dialog-4');
 const tuto = document.getElementById('tuto');
 const okBtn = document.getElementById('okBtn');
 const divOk = document.querySelector('con2');
+const menuA = document.querySelector('.drpA');
+const menu = document.querySelector('.dropdown');
+const menuContent = document.querySelector('.dropdown-content');
+const drpBtn = document.querySelector('.dropbtn');
 
 const imageWidth = image.offsetWidth;
 const imageHeight = image.offsetHeight;
@@ -59,3 +63,36 @@ okBtn.addEventListener('click', () => {
   
 
 });
+var z = 1;
+drpBtn.addEventListener('click', () => {
+  z++;
+  if(z%2 == 0){
+    menuA.style.backgroundColor = '#f1f1f1'
+    menuContent.style.display = 'block';
+  } else{
+    menuA.style.backgroundColor = 'transparent'
+    menuContent.style.display = 'none';
+  }
+
+});
+
+function playAudioOnMaxZoom() {
+    var sus = document.getElementById('sus');
+    var bassa = document.getElementById('bassa');
+    var iiniin = document.getElementById('iiniin');
+    var lezgoo = document.getElementById('lezgoo');
+    var tr9tr9 = document.getElementById('tr9tr9');
+    sus.play();
+    /**bassa.play();
+    iiniin.play();
+    lezgoo.play();
+    tr9tr9.play();**/
+}
+
+function checkMaxZoom() {
+  if (window.innerWidth <= 350) {
+    playAudioOnMaxZoom();
+  }
+}
+
+window.addEventListener('resize', checkMaxZoom);

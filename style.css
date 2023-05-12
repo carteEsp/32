@@ -4,8 +4,11 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
     background: linear-gradient(to right, #dbe6f6, #c5796d);
+    
 }
+
 main{
     margin-top: 5vh;
     height: 80vh;
@@ -56,7 +59,7 @@ main{
 }
 @media only screen and (max-width: 767px) {
     .header0{
-        width: 80%;
+        width: 40%;
         margin-left: 10%;
         height: 6.5vh;
         position: relative;
@@ -67,6 +70,7 @@ main{
         gap: 0%;
         align-items: center;
         user-select: none;
+        
     }
     .speech-bubble {
         z-index: -1;
@@ -88,16 +92,21 @@ main{
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-      #okBtn{
+    }
+    #okBtn{
         transform: translateX(200%) translateY(-2.5vh);
     }
+    a{
+        display: none;
+    }
 }  
+
 .navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 15rem;
+    height: 100%;
 }
 a{
     text-decoration: none;
@@ -114,13 +123,14 @@ a{
     }
     100% {
       width: 100%;
-      left: 30%;
+      left: 2%;
     }
 }
+
 .clickables {
     position: fixed;
     top: 2vh;
-    padding: 15px;
+    padding: 15px 5px 15px 5px;
 }
 .clickables::before {
     content: "";
@@ -153,6 +163,7 @@ a{
     content: "";
     position: absolute;
     background-color: lightblue;
+    border-radius: 4px;
     height: 3.5vh;
     width: 1rem;
     border-radius: 1px;
@@ -275,4 +286,121 @@ footer{
     font-family: monospace;
     pointer-events: none;
     user-select: none;
+}
+
+/**##########################################**/
+
+.dropdown {
+    position: relative;
+    display: none;
+    float: right;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: max-height 0.3s ease;
+    max-height: max-content;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .dropdown {
+        position: absolute;
+        top: 3.2vh;
+        right: 5vw;
+        display: inline-block;
+    }
+  
+    .dropbtn {
+        background-color: lightblue;
+        color: black;
+        border-radius: 1px;
+        box-shadow: inset 1px 1px 4px black;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+  
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 9px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+  
+    .dropdown-content a {
+        color: black;
+        padding: 8px 12.5px;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .dropdown {
+        display: none;
+    }
+}
+@media (max-width: 350px) {
+    .wtf{
+        position: relative;
+        top: -8em;
+        margin-left: 18vw;
+        z-index: 999;
+    }
+    
+    main, .header0, .dropdown, footer{
+        visibility: hidden;
+    }
+    body{
+        background-image: url('media/peakpx.jpg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wtfI{
+        display: block;
+        position: absolute;
+        top: -100vh;
+        margin-left: 25vw;
+    }
+}
+.wtf{
+    position: relative;
+    bottom: -5vh;
+    left: 50px;
+    z-index: 999;
+    color: white;
+}
+.wtfI{
+    display: block;
+    position: relative;
+    bottom: -500vh;
+    left: 50px;
 }
