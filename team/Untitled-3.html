@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background-color: #DAE1E7;
+}
+
+nav{
+    float: right;
+    width: 60%;
+    }
+    .menu{
+    list-style-type:none;
+    }
+    .menu>li{
+    display: inline-block;
+    margin: 5px;
+    }
+    .menu>li>a{
+    display: inline-block;
+    text-decoration: none;
+    color:rgba(0,0,0,0.5);
+    padding: 10px;
+    font-size: 1.5em;
+    }
+    .menu>li:hover{
+    border-bottom: 4px solid #00909E;
+    }
+    .services{
+    position: relative;
+    }
+    .sous-menu{
+    list-style-type:none;
+    position: absolute;
+    left:0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;/* transition appliquée sur la propriété m
+    ax-height */
+    padding: 0;
+    margin: 5px 0;
+    }
+    .services:hover>.sous-menu{
+    max-height:150px; /* Pour afficher le menu après le "hover" */
+    }
+    .sous-menu>li{
+    text-align: center;
+    background:#777;
+    line-height: 1.5em;
+    font-size: 1em;
+    padding: 5px 0;
+    border: 1px #fff solid;
+    }
+    .sous-menu>li>a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    color:#fff;
+    }
+    .sous-menu>li:hover{
+    background:#00909E;}
+
+    .input-container {
+        width: 30%;
+        float: left;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .input {
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        padding: 18px 16px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+    .input::placeholder {
+        color: transparent;
+    }
+
+    .input:focus::placeholder {
+        color: rgb(131, 128, 128);
+    }
+
+    .input:focus,.input:not(:placeholder-shown) {
+        background-color: #fff;
+        border: 1px solid #00909E;
+        width: 290px;
+        cursor: none;
+        padding: 18px 16px 18px 40px;
+    }
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        width: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        z-index: -1;
+        fill:#00909E;
+        border: 1px solid #00909E;
+    }
+
+    .input:hover + .icon {
+        transform: rotate(360deg);
+        transition: .2s ease-in-out;
+    }
+
+    .input:focus + .icon,.input:not(:placeholder-shown) + .icon {
+        z-index: 0;
+        background-color: transparent;
+        border: none;
+    }
+
+    article.main1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18px;
+        clear: both;
+        background-color: #00919e81;
+        width: 60%;
+        margin-left: 20%;
+        border: #00909E solid;
+        border-radius: 10%;
+        padding: 50px;
+    }
+    .main1 p {
+        font-size: 18px;
+    }
+    .main1 .idk{
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgba(46, 38, 38, 0.687);
+
+    }
+
+    .main1 p span{
+        text-decoration: underline 2px #000000;
+    }
+
+    footer.cta {
+        position: fixed;
+        clear: both;
+        border:none;
+        background:none;
+    }
+
+    .cta a {
+        text-decoration: none;
+        padding-bottom: 7px;
+        letter-spacing: 4px;
+        font-size: 14px;
+        padding-right: 15px;
+        text-transform: uppercase;
+    }
+
+    .cta svg {
+        transform: translateX(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active svg {
+        transform: scale(0.9);
+    }
+
+    .hover-underline-animation {
+        position: relative;
+        color: black;
+        padding-bottom: 20px;
+    }
+    .hover-underline-animation:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .cta:hover .hover-underline-animation:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+<body>
+    <div id="header">
+        <div class="input-container">
+            <input placeholder="Search something..." class="input" name="text" type="text">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <rect fill="white"></rect> <path d="M7.25007 2.38782C8.54878 2.0992 10.1243 2 12 2C13.8757 2 15.4512 2.0992 16.7499 2.38782C18.06 2.67897 19.1488 3.176 19.9864 4.01358C20.824 4.85116 21.321 5.94002 21.6122 7.25007C21.9008 8.54878 22 10.1243 22 12C22 13.8757 21.9008 15.4512 21.6122 16.7499C21.321 18.06 20.824 19.1488 19.9864 19.9864C19.1488 20.824 18.06 21.321 16.7499 21.6122C15.4512 21.9008 13.8757 22 12 22C10.1243 22 8.54878 21.9008 7.25007 21.6122C5.94002 21.321 4.85116 20.824 4.01358 19.9864C3.176 19.1488 2.67897 18.06 2.38782 16.7499C2.0992 15.4512 2 13.8757 2 12C2 10.1243 2.0992 8.54878 2.38782 7.25007C2.67897 5.94002 3.176 4.85116 4.01358 4.01358C4.85116 3.176 5.94002 2.67897 7.25007 2.38782ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+        </div>
+        <nav>
+            <ul class="menu">
+            <li><a href="Untitled-1.html" title="">HOME</a></li>
+            <ul class="sous-menu">
+            <li><a href="#" title="">pg1</a></li>
+            <li><a href="#" title="">pg2</a></li>
+            <li><a href="#" title="">pg3</a></li>
+            <li><a href="#" title="">pg3</a></li>
+            <li><a href="#" title="">QUIZ</a></li>
+            </ul>
+            </li>
+            <li><a href="Untitled-2.html" title="#">TEAM</a></li>
+            <li><a href="#" title="#">CONTACT</a></li>
+            </ul>
+            </nav>
+        </div>
+
+        <article class="main1">
+            <p>La carte ESP32 est conçue pour être utilisée dans les applications IoT (Internet des objets) et comprend une variété de fonctionnalités pour faciliter la communication avec d’autres dispositifs et l’accès à Internet.
+                Voici quelques-unes des principales caractéristiques de la carte ESP32 :
+            <ol>
+                <li>Bluetooth et WiFi : La carte ESP32 inclut un module WiFi et Bluetooth pour faciliter la communication sans fil avec d’autres dispositifs.</li>
+                <li>Connectivité : La carte ESP32 est équipée de plusieurs ports de communication, tels que USB, UART, I2C et SPI, ce qui la rend idéale pour la communication avec d’autres composants électroniques.</li>
+                <li>Mémoire : La carte ESP32 dispose de 512 Ko de mémoire flash et de 8 Mo de RAM.</li>
+                <li>Energie : La carte ESP32 est alimentée par une tension de 3,3 V et est dotée d’un circuit de gestion de l’alimentation pour gérer les périodes de veille et d’arrêt.</li>
+                <li>Logiciels : La carte ESP32 est compatible avec un large éventail de logiciels de développement, tels que Arduino, ESP-IDF et MicroPython. Cela permet aux développeurs de choisir le logiciel de développement qui leur convient le mieux.</li>
+            </ol>
+            <p><span>L'Internet des objets</span> ou IdO (en anglais (the) Internet of Things ou IoT) est l'interconnexion entre l'Internet et des objets, des lieux et des environnements physiques. L'appellation désigne un nombre croissant d'objets connectés à Internet permettant ainsi une communication entre nos biens dits physiques et leurs existences numériques. Ces formes de connexions permettent de rassembler de nouvelles masses
+                de données sur le réseau et donc, de nouvelles connaissances et formes de savoirs.
+            </p>
+            <h3>Comment fonctionne l'IoT ?<h2>
+            <div class="idk">
+                <p>Un système IoT classique fonctionne par le biais de la collecte et de l'échange de données en temps réel. Un système IoT se compose de trois éléments :
+                <ol>
+                    <li>Appareils intelligents </br> Il s'agit d'un appareil, comme un téléviseur, une caméra de sécurité ou un appareil d'exercice, doté de capacités informatiques. Il recueille des données à partir de son environnement, des entrées de l'utilisateur ou des modèles d'utilisation, puis les communique sur Internet vers et depuis son application IoT.</li>
+                    <li>Application IoT </br> Une application IoT est un recueil de services et de logiciels qui intègre les données transmises par divers appareils IoT. Elle utilise la technologie de machine learning ou d'intelligence artificielle (IA) pour analyser ces données et prendre des décisions éclairées. Ces décisions sont communiquées en retour à l'appareil IoT, qui répond alors intelligemment aux entrées. </li>
+                    <li>Une interface utilisateur graphique </br>L'appareil IoT ou la flotte d'appareils peut être géré par le biais d'une interface utilisateur graphique. Parmi les exemples courants, citons une application mobile ou un site web qui peut servir à enregistrer et à contrôler des appareils intelligents. </li>
+                </ol>
+                </p>
+            </div>
+
+            </p>
+        </article>
+
+        <footer>
+            <button class="cta">
+                <a href="https://www.google.com/?hl=fr" class="hover-underline-animation"> Any question?:3</a>
+                <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                </svg>
+            </button>
+        </footer>
+</body>
+</html>
