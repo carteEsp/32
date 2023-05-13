@@ -367,7 +367,7 @@ footer{
         display: none;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 350px) {
     .wtf{
         position: relative;
         top: -8em;
